@@ -268,6 +268,7 @@ nav {
     padding: 10px 0;
     flex-wrap: wrap;
     font-size: 15px;
+    width: 100%;
 }
 
 /* Estilo dos itens do menu */
