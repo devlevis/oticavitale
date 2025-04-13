@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ótica Vitale</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #f3f4f6, #ffffff);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #14195D;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            height: 100px;
+            width: 250px
+        }
+
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sobre {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .sobre-texto {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .sobre-imagem {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .sobre-imagem img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .produto {
+            background-color: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .produto:hover {
+            transform: scale(1.05);
+        }
+
+        .produto img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .produto p {
+            padding: 10px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .agendamento {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .agendamento a {
+            background-color: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+
+        .agendamento a:hover {
+            background-color: #1ebc5b;
+        }
+
+        .parceiros {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .parceiros h2 {
+            color: #010165;
+            margin-bottom: 30px;
+        }
+
+        .carrossel-parceiros {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding: 10px 0;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE e Edge */
+
+            justify-content: center;
+            /* Adicionado */
+            align-items: center;
+            /* Adicionado */
+        }
+
+        .carrossel-parceiros::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari */
+        }
+
+        .carrossel-parceiros img {
+            height: 80px;
+            object-fit: contain;
+            flex: 0 0 auto;
+            scroll-snap-align: center;
+            transition: transform 0.3s;
+        }
+
+        .carrossel-parceiros img:hover {
+            transform: scale(1.1);
+        }
+
+        .loja-info {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .mapa {
+            width: 100%;
+            height: 400px;
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        footer {
+            background-color: #010165;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .contatos {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .contatos a {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contatos a:hover {
+            color: #d4af37;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="oculos/logo.png" alt="Logo da Ótica Vitale" class="logo">
+    </header>
+
+    <section class="section fade-in sobre">
+        <div class="sobre-texto">
+            <h2>Sobre a Ótica Vitale</h2>
+            <p>Na Ótica Vitale, oferecemos excelência em qualidade, atendimento e uma ampla variedade de óculos para
+                todos os estilos. Nosso compromisso é com a sua visão e bem-estar. Venha nos visitar e descubra um novo
+                olhar!</p>
+        </div>
+        <div class="sobre-imagem">
+            <img src="oculos/main.jpeg" alt="Foto da loja">
+        </div>
+    </section>
+
+    <section class="section fade-in">
+        <h2 style="text-align: center;">Nossos Produtos</h2>
+        <div class="produtos">
+            <div class="produto">
+                <img src="oculos/oculos2.jpeg" alt="Óculos 1">
+                <p>Óculos Clássico</p>
+            </div>
+            <div class="produto">
+                <img src="oculos/oculos3.jpeg" alt="Óculos 2">
+                <p>Óculos Moderno</p>
+            </div>
+            <div class="produto">
+                <img src="oculos/oculos1.jpeg" alt="Óculos 3">
+                <p>Óculos Esportivo</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section fade-in">
+        <div class="agendamento">
+            <h2>Agende sua Visita</h2>
+            <br>
+            <p>Clique no botão abaixo para falar conosco:</p>
+             <br>
+            <a href="https://wa.me/SEUNUMERO" target="_blank">Fale pelo WhatsApp</a>
+        </div>
+    </section>
+
+    <section class="section fade-in parceiros">
+        <h2>Parceiros</h2>
+        <div class="carrossel-parceiros">
+            <img src="oculos/kodak.jpeg" alt="Parceiro Kodak">
+            <img src="oculos/crizal.jpeg" alt="Parceiro Crizal">
+            <img src="oculos/transitions.jpeg" alt="Parceiro Transitions">
+            <img src="oculos/zeiss.jpeg" alt="Parceiro Zeiss">
+            <img src="oculos/essilor.jpeg" alt="Parceiro Essilor">
+            <img src="oculos/varilux.jpeg" alt="Parceiro Hoya">
+            <!-- Adicione mais conforme necessário -->
+        </div>
+    </section>
+
+    <section class="section fade-in">
+        <div class="loja-info">
+            <h2>Endereço da Loja</h2>
+            <p>Av. XX, n 230 - Cj - Jereissati II, Pacatuba - CE, 61814-236</p>
+            <div class="mapa">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d351.8431487472317!2d-38.61083582703124!3d-3.8848090407527094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c75382a9328cc3%3A0x3482f0493789562d!2sAv.%20XX%2C%20230%20-%20Jereissati%20I%2C%20Pacatuba%20-%20CE%2C%2061900-300!5e0!3m2!1spt-BR!2sbr!4v1744554380210!5m2!1spt-BR!2sbr"
+                    width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Entre em contato conosco</p>
+        <div class="contatos">
+            <a href="https://wa.me/SEUNUMERO" target="_blank">📱 WhatsApp</a>
+            <a href="https://instagram.com/SEUINSTAGRAM" target="_blank">📸 Instagram</a>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.9rem;">&copy; 2025 Ótica Vitale</p>
+    </footer>
+
+    <script>
+        const fadeInElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        fadeInElements.forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
